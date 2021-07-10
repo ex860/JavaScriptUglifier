@@ -1,5 +1,6 @@
 .title {
     text-align: center;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
     .javascript {
         color: rgb(0, 117, 98);
         border: 1px solid rgb(0, 117, 98);
@@ -17,6 +18,7 @@
     justify-content: center;
     padding: 20px;
     textarea {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
         width: 2000px;
         height: 500px;
         font-size: 18px;
@@ -25,6 +27,7 @@
 .uglifiy-btn-div {
     display: flex;
     justify-content: space-around;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
     button {
         -webkit-box-align: center;
         align-items: center;
