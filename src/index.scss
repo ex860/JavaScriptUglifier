@@ -1,0 +1,53 @@
+.title {
+    text-align: center;
+    .javascript {
+        color: rgb(0, 117, 98);
+        border: 1px solid rgb(0, 117, 98);
+        padding: 4px;
+    }
+    .uglifier {
+        background-color: rgb(0, 117, 98);
+        color: rgb(255, 255, 255);
+        border: 1px solid rgb(0, 117, 98);
+        padding: 4px;
+    }
+}
+.textarea-div {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    textarea {
+        width: 2000px;
+        height: 500px;
+        font-size: 18px;
+    }
+}
+.uglifiy-btn-div {
+    display: flex;
+    justify-content: space-around;
+    button {
+        -webkit-box-align: center;
+        align-items: center;
+        appearance: none;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+        display: inline-flex;
+        justify-content: center;
+        position: relative;
+        height: 48px;
+        white-space: nowrap;
+        transition: all 75ms ease-in-out 0s;
+        padding: 8px 16px;
+        font-size: 24px;
+        line-height: 24px;
+        background-color: rgb(0, 117, 98);
+        color: rgb(255, 255, 255);
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin: 0px;
+    }
+}

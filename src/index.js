@@ -1,17 +1,61 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useState } from 'react'
+import ReactDOM from 'react-dom'
+import './index.scss'
+import converter from './jsUglifier'
+
+const Main = () => {
+  const [value, setValue] = useState('')
+  const [uglyValue, setUglyValue] = useState('')
+  const [showCpExe, setShowCpExe] = useState(false)
+  const handleChange = (e) => {
+    setValue(e.target.value)
+  }
+  const uglifiy = () => {
+    if (value) {
+      setUglyValue(converter(value))
+      setShowCpExe(true)
+    }
+  }
+
+  const copyUglyValue = () => {
+    document.querySelector('#ugly-output').select()
+    document.execCommand("copy");
+    document.querySelector('#ugly-output').blur()
+  }
+
+  const execute = () => {
+    try {
+      (() => { eval(uglyValue) })()
+    } catch (err) { console.error(err) }
+  }
+  return (
+    <>
+      <h1 className="title">
+        <span className="javascript">JavaScript</span>
+        <span className="uglifier">Uglifier</span>
+      </h1>
+      <div className="textarea-div">
+        <textarea value={value} onChange={handleChange} placeholder="Enter your JavaScript code here..." />
+      </div>
+      <div className="uglifiy-btn-div">
+        <button type="button" onClick={uglifiy}>Uglify</button>
+      </div>
+      {showCpExe && (
+        <div>
+          <div className="textarea-div">
+            <textarea id="ugly-output" value={uglyValue} readOnly />
+          </div>
+          <div className="uglifiy-btn-div">
+            <button type="button" onClick={copyUglyValue}>Copy</button>
+            <button type="button" onClick={execute}>Execute</button>
+          </div>
+        </div>
+      )}
+    </>
+  )
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Main />,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
