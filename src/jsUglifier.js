@@ -182,6 +182,10 @@ const printCheckingResult = (key, result) => {
     }
 }
 
+const convertReturnNeededCharacter = (string, alphabetMapping) => {
+    const convertedCharArray = []
+    for (const char of string) {
+        let charVal = null
         if (alphabetMapping[char]) {
             charVal = alphabetMapping[char]
         } else if (numberMapping[char]) {
