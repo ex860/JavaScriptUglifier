@@ -182,6 +182,22 @@ const printCheckingResult = (key, result) => {
     }
 }
 
+        if (alphabetMapping[char]) {
+            charVal = alphabetMapping[char]
+        } else if (numberMapping[char]) {
+            charVal = `(${numberMapping[char]})`
+        } else {
+            if (char === '"') {
+                charVal = '\'"\''
+            } else {
+                charVal = `"${char}"`
+            }
+        }
+        convertedCharArray.push(charVal)
+    }
+    return `(()=>{})[${basis['"constructor"']}](${uglify('return')}+" "+${convertedCharArray.join('+')})()`
+}
+
 for (const num in numberMapping) {
     printCheckingResult(Number(num), numberMapping[num])
 }
@@ -202,26 +218,8 @@ if (env === NODEJS) {
 
 
 for (const letter in base64AlphabetMapping) {
-    const convertedCharArray = []
-    for (const char of base64AlphabetMapping[letter]) {
-        let charVal = null
-        if (alphabetMapping[char]) {
-            charVal = alphabetMapping[char]
-        } else if (numberMapping[char]) {
-            charVal = `(${numberMapping[char]})`
-        } else {
-            if (char === '"') {
-                charVal = '\'"\''
-            } else if (char === '\\') {
-                charVal = '\'\\\\\''
-            } else {
-                charVal = `"${char}"`
-            }
-        }
-        convertedCharArray.push(charVal)
-    }
-    const versionJoin = convertedCharArray.join('+')
-    const result = `(()=>{})[${uglify('constructor')}](${uglify('return')}+" "+${versionJoin})()`
+    const result = convertReturnNeededCharacter(base64AlphabetMapping[letter], alphabetMapping)
+    base64AlphabetMapping[letter] = result
     printCheckingResult(letter, result)
 }
 
@@ -245,13 +243,13 @@ const converter = (inputStr) => {
         } else if (numberMapping[char]) {
             charVal = `(${numberMapping[char]})`
         } else {
-            // const charCode = char.charCodeAt()
+            const charCode = char.charCodeAt()
             if (char === '"') {
                 charVal = '\'"\''
             } else if (char === '\\') {
-                charVal = '\'\\\\\''
-                // } else if (charCode < 32) {
-                //     charVal = '\\' + String.fromCharCode(charCode)
+                charVal = '"\\\\"'
+            } else if (charCode >= 256) {
+                charVal = convertReturnNeededCharacter(`String["fromCharCode"](${charCode})`, characterMapping)
             } else {
                 charVal = `"${char}"`
             }
@@ -261,7 +259,7 @@ const converter = (inputStr) => {
     const uglifiedInputArr = inputArr.join('+')
     // console.log(uglifiedInputArr)
     // console.log(eval(`(()=>{})[${basis['"constructor"']}](${uglifiedInputArr})()`), '\n')
-    return `(()=>{})[${basis['"constructor"']}](${uglifiedInputArr})()\n`
+    return `(()=>{})[${basis['"constructor"']}](${uglifiedInputArr})()`
 }
 
 export default converter
