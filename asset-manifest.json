@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/JavaScriptUglifier/static/css/main.a3079d54.chunk.css",
-    "main.js": "/JavaScriptUglifier/static/js/main.18206b73.chunk.js",
-    "main.js.map": "/JavaScriptUglifier/static/js/main.18206b73.chunk.js.map",
+    "main.js": "/JavaScriptUglifier/static/js/main.f5b303c6.chunk.js",
+    "main.js.map": "/JavaScriptUglifier/static/js/main.f5b303c6.chunk.js.map",
     "runtime-main.js": "/JavaScriptUglifier/static/js/runtime-main.7a862e3a.js",
     "runtime-main.js.map": "/JavaScriptUglifier/static/js/runtime-main.7a862e3a.js.map",
     "static/js/2.48e95d92.chunk.js": "/JavaScriptUglifier/static/js/2.48e95d92.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.7a862e3a.js",
     "static/js/2.48e95d92.chunk.js",
     "static/css/main.a3079d54.chunk.css",
-    "static/js/main.18206b73.chunk.js"
+    "static/js/main.f5b303c6.chunk.js"
   ]
 }
