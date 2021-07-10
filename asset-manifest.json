@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/javascript-uglifier/static/css/main.fd6c834b.chunk.css",
-    "main.js": "/javascript-uglifier/static/js/main.18206b73.chunk.js",
-    "main.js.map": "/javascript-uglifier/static/js/main.18206b73.chunk.js.map",
-    "runtime-main.js": "/javascript-uglifier/static/js/runtime-main.ae51c988.js",
-    "runtime-main.js.map": "/javascript-uglifier/static/js/runtime-main.ae51c988.js.map",
-    "static/js/2.48e95d92.chunk.js": "/javascript-uglifier/static/js/2.48e95d92.chunk.js",
-    "static/js/2.48e95d92.chunk.js.map": "/javascript-uglifier/static/js/2.48e95d92.chunk.js.map",
-    "index.html": "/javascript-uglifier/index.html",
-    "static/css/main.fd6c834b.chunk.css.map": "/javascript-uglifier/static/css/main.fd6c834b.chunk.css.map",
-    "static/js/2.48e95d92.chunk.js.LICENSE.txt": "/javascript-uglifier/static/js/2.48e95d92.chunk.js.LICENSE.txt"
+    "main.css": "/JavascriptUglifier/static/css/main.fd6c834b.chunk.css",
+    "main.js": "/JavascriptUglifier/static/js/main.18206b73.chunk.js",
+    "main.js.map": "/JavascriptUglifier/static/js/main.18206b73.chunk.js.map",
+    "runtime-main.js": "/JavascriptUglifier/static/js/runtime-main.3bd857f4.js",
+    "runtime-main.js.map": "/JavascriptUglifier/static/js/runtime-main.3bd857f4.js.map",
+    "static/js/2.48e95d92.chunk.js": "/JavascriptUglifier/static/js/2.48e95d92.chunk.js",
+    "static/js/2.48e95d92.chunk.js.map": "/JavascriptUglifier/static/js/2.48e95d92.chunk.js.map",
+    "index.html": "/JavascriptUglifier/index.html",
+    "static/css/main.fd6c834b.chunk.css.map": "/JavascriptUglifier/static/css/main.fd6c834b.chunk.css.map",
+    "static/js/2.48e95d92.chunk.js.LICENSE.txt": "/JavascriptUglifier/static/js/2.48e95d92.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.ae51c988.js",
+    "static/js/runtime-main.3bd857f4.js",
     "static/js/2.48e95d92.chunk.js",
     "static/css/main.fd6c834b.chunk.css",
     "static/js/main.18206b73.chunk.js"
