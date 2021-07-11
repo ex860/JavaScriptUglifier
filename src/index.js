@@ -9,17 +9,50 @@ const Main = () => {
   const [showCpExe, setShowCpExe] = useState(false)
 
   useEffect(() => {
-    document.getElementById('ugly-input').addEventListener('keydown', function(e) {
-      if (e.key === 'Tab') {
-        e.preventDefault();
-        let start = this.selectionStart;
-        const end = this.selectionEnd;
-    
-        // set textarea value to: text before caret + tab + text after caret
-        this.value = this.value.substring(0, start) + "\t" + this.value.substring(end);
-    
-        // put caret at right position again
-        this.selectionStart = this.selectionEnd = start + 1;
+    document.getElementById('ugly-input').addEventListener('keydown', function (e) {
+      const start = this.selectionStart;
+      const end = this.selectionEnd;
+      switch (e.key) {
+        case 'Tab':
+          e.preventDefault()
+          // set textarea value to: text before caret + tab + text after caret
+          this.value = this.value.substring(0, start) + '\t' + this.value.substring(end)
+
+          // put caret at right position again
+          this.selectionStart = this.selectionEnd = end + 1
+          break
+        case '{':
+          e.preventDefault()
+          this.value = this.value.substring(0, start) + '{' + this.value.substring(start, end) + '}' + this.value.substring(end)
+          this.selectionStart = start + 1
+          this.selectionEnd = end + 1
+          break
+        case '[':
+          e.preventDefault()
+          this.value = this.value.substring(0, start) + '[' + this.value.substring(start, end) + ']' + this.value.substring(end)
+          this.selectionStart = start + 1
+          this.selectionEnd = end + 1
+          break
+        case '(':
+          e.preventDefault()
+          this.value = this.value.substring(0, start) + '(' + this.value.substring(start, end) + ')' + this.value.substring(end)
+          this.selectionStart = start + 1
+          this.selectionEnd = end + 1
+          break
+        case '"':
+          e.preventDefault()
+          this.value = this.value.substring(0, start) + '"' + this.value.substring(start, end) + '"' + this.value.substring(end)
+          this.selectionStart = start + 1
+          this.selectionEnd = end + 1
+          break
+        case '\'':
+          e.preventDefault()
+          this.value = this.value.substring(0, start) + '\'' + this.value.substring(start, end) + '\'' + this.value.substring(end)
+          this.selectionStart = start + 1
+          this.selectionEnd = end + 1
+          break
+        default:
+          break
       }
     });
   }, [])
