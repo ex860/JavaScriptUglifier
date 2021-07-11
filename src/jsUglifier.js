@@ -202,6 +202,17 @@ const convertReturnNeededCharacter = (string, alphabetMapping) => {
     return `(()=>{})[${basis['"constructor"']}](${uglify('return')}+" "+${convertedCharArray.join('+')})()`
 }
 
+const handleEndLine = (inputStr) => {
+    // Remove comment line
+    inputStr = inputStr.replace(/\/\/.*\n/g, '\n')
+    // Remove end line after curly brackets and comma
+    inputStr = inputStr.replace(/(\{|,)[\n ]+/g, '$1')
+    inputStr = inputStr.replace(/[\n ]+\}/g, () => '}')
+    // Replace end line with semicolon
+    inputStr = inputStr.replace(/\n/g, () => ';')
+    return inputStr
+}
+
 for (const num in numberMapping) {
     printCheckingResult(Number(num), numberMapping[num])
 }
@@ -235,9 +246,7 @@ const characterMapping = { ...alphabetMapping, ...base64AlphabetMapping }
 // let inputStr = `${b}`
 
 const converter = (inputStr) => {
-    inputStr = inputStr.replace(/(\{|,)[\n ]+/g, '$1')
-    inputStr = inputStr.replace(/[\n ]+\}/g, () => '}')
-    inputStr = inputStr.replace(/\n/g, () => ';')
+    inputStr = handleEndLine(inputStr)
     const inputArr = []
     // Replace all the alphabet and numbers
     for (const char of inputStr) {
