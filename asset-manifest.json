@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/JavaScriptUglifier/static/css/main.a3079d54.chunk.css",
-    "main.js": "/JavaScriptUglifier/static/js/main.f5b303c6.chunk.js",
-    "main.js.map": "/JavaScriptUglifier/static/js/main.f5b303c6.chunk.js.map",
+    "main.css": "/JavaScriptUglifier/static/css/main.c78fd140.chunk.css",
+    "main.js": "/JavaScriptUglifier/static/js/main.ed03229f.chunk.js",
+    "main.js.map": "/JavaScriptUglifier/static/js/main.ed03229f.chunk.js.map",
     "runtime-main.js": "/JavaScriptUglifier/static/js/runtime-main.7a862e3a.js",
     "runtime-main.js.map": "/JavaScriptUglifier/static/js/runtime-main.7a862e3a.js.map",
     "static/js/2.48e95d92.chunk.js": "/JavaScriptUglifier/static/js/2.48e95d92.chunk.js",
     "static/js/2.48e95d92.chunk.js.map": "/JavaScriptUglifier/static/js/2.48e95d92.chunk.js.map",
     "index.html": "/JavaScriptUglifier/index.html",
-    "static/css/main.a3079d54.chunk.css.map": "/JavaScriptUglifier/static/css/main.a3079d54.chunk.css.map",
+    "static/css/main.c78fd140.chunk.css.map": "/JavaScriptUglifier/static/css/main.c78fd140.chunk.css.map",
     "static/js/2.48e95d92.chunk.js.LICENSE.txt": "/JavaScriptUglifier/static/js/2.48e95d92.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7a862e3a.js",
     "static/js/2.48e95d92.chunk.js",
-    "static/css/main.a3079d54.chunk.css",
-    "static/js/main.f5b303c6.chunk.js"
+    "static/css/main.c78fd140.chunk.css",
+    "static/js/main.ed03229f.chunk.js"
   ]
 }
