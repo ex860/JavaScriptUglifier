@@ -4,7 +4,7 @@
 
 ## How it works
 
-It leverages [type coercion](https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion) in JavaScript to implement the replacement of characters and numbers. Use character `a` for examples:
+It leverages [type coercion](https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion) in JavaScript to implement the replacement of characters and numbers. Use character `a` for example:
 
 First, if we execute `[]` in JavaScript, we get `[]`, obviously:
 ```
@@ -31,7 +31,7 @@ Finally, we wrap previous `![]+""` with parentheses `()` and append it with `[1]
 > (![]+"")[1]
 'a'
 ```
-Hooray! 🥳 We get character `a` successfully! 🎉
+**Hooray! 🥳 &nbsp;We get character `a` successfully! 🎉**
 
 For other characters/numbers, you can see [here](https://github.com/ex860/JavaScriptUglifier/blob/main/src/jsUglifier.js).
 
