@@ -99,9 +99,16 @@ const Main = () => {
       return <pre onClick={() => setValue(example)}>{example}</pre>
     })
   }
+  
+  const titleCSS = `'text-align: center; font-family: Avenir, Helvetica, Arial, sans-serif; font-size: 50px; margin: 32px 0px;`
+  const clickedTitleValue = 
+    `console.log('%cJavaScript%cUglifier',` + 
+    titleCSS + `color: rgb(0, 117, 98); border: 4px solid rgb(0, 117, 98); padding: 4px;',` + 
+    titleCSS + `background-color: rgb(0, 117, 98); color: rgb(255, 255, 255); border: 4px solid rgb(0, 117, 98); padding: 4px;')`;
+  
   return (
     <>
-      <div className="title">
+      <div className="title" onClick={() => setValue(clickedTitleValue)}>
         <span className="javascript">JavaScript</span>
         <span className="uglifier">Uglifier</span>
       </div>
